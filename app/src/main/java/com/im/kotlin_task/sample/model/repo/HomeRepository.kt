@@ -36,6 +36,8 @@ class HomeRepository(
 
             /*** if return true loadFromDB called else createCallAsync is called */
             override fun shouldFetchFromDB(): Boolean {
+                /*Api will be called after one min before that result will be fetched from database*/
+
                 return (System.currentTimeMillis().minus(
                     preferences[PreferenceConstants.LAST_API_CALL_TIME,
                             0L]!!
